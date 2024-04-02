@@ -8,6 +8,8 @@ const determineCondition = (shortDescription, longDescription) => {
     
     if (checkWordsExist(shortDescription, keywords) || checkWordsExist(longDescription, keywords)) {
         return "Renew";
+    } else if (checkWordsExist(shortDescription, ["remanufactured", "recertified"]) || checkWordsExist(longDescription, ["remanufactured", "recertified"])) {
+        return "Renew";
     } else {
         return "New";
     }
